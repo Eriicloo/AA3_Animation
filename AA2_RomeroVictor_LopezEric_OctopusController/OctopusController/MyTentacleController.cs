@@ -21,6 +21,7 @@ namespace OctopusController
         Transform _endEffectorSphere;
 
         public Transform[] Bones { get => _bones; }
+        public Transform EndEffectorSphere { get => _endEffectorSphere; set => _endEffectorSphere = value; }
 
         //Exercise 1.
         public Transform[] LoadTentacleJoints(Transform root, TentacleMode mode)
@@ -32,15 +33,71 @@ namespace OctopusController
             switch (tentacleMode){
                 case TentacleMode.LEG:
                     //TODO: in _endEffectorsphere you keep a reference to the base of the leg
+                    LegBones(root);
+
                     break;
                 case TentacleMode.TAIL:
-                    //TODO: in _endEffectorsphere you keep a reference to the red sphere 
+                    //TODO: in _endEffectorsphere you keep a reference to the red sphere
+                    TailBones(root);
+
                     break;
                 case TentacleMode.TENTACLE:
                     //TODO: in _endEffectorphere you  keep a reference to the sphere with a collider attached to the endEffector
+                    TentacleBones(root);
+
                     break;
             }
             return Bones;
+        }
+
+        private void LegBones(Transform root) 
+        {
+            Transform bone = root.GetChild(0);
+
+            List<Transform> tempBones = new List<Transform>();
+
+            while (bone.childCount > 0)
+            {
+                tempBones.Add(bone);
+                bone = bone.GetChild(1);
+            }
+            tempBones.Add(bone);
+
+            _bones = tempBones.ToArray();
+            _endEffectorSphere = tempBones[_bones.Length - 1];
+        }
+
+        private void TailBones(Transform root) 
+        {
+            Transform bone = root;
+
+            List<Transform> tempBones = new List<Transform>();
+
+            while (bone.childCount > 0)
+            {
+                tempBones.Add(bone);
+                bone = bone.GetChild(1);
+            }
+            tempBones.Add(bone);
+
+            _bones = tempBones.ToArray();
+            _endEffectorSphere = tempBones[_bones.Length - 1];
+        }
+
+        private void TentacleBones(Transform root)
+        {
+            Transform bone = root.GetChild(0).GetChild(0);
+
+            List<Transform> tempBones = new List<Transform>();
+
+            while (bone.childCount > 0)
+            {
+                tempBones.Add(bone);
+                bone = bone.GetChild(0);
+            }
+
+            _bones = tempBones.ToArray();
+            _endEffectorSphere = bone;
         }
     }
 }
