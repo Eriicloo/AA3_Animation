@@ -1,0 +1,22 @@
+E:\Trabajo\Classes Enti\Practicas2019-20\delivery2-2019-20\MyOctopusLibrary\OctopusController\OctopusController\obj\Release\OctopusController.csproj.CoreCompileInputs.cache
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\OctopusController.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\OctopusController.pdb
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\UnityEditor.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\UnityEngine.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\Unity.Cecil.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\Bee.BeeDriver2.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\Bee.BinLog.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\PlayerBuildProgramLibrary.Data.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\Bee.TinyProfiler2.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\ExCSS.Unity.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\Unity.CompilationPipeline.Common.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\ScriptCompilationBuildProgram.Data.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\BeeBuildProgramCommon.Data.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\System.CodeDom.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\UnityEditor.xml
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\bin\Release\UnityEngine.xml
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\obj\Release\OctopusController.csproj.AssemblyReference.cache
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\obj\Release\OctopusController.csproj.CoreCompileInputs.cache
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\obj\Release\OctopusController.csproj.CopyComplete
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\obj\Release\OctopusController.dll
+C:\Users\alberto.alegre\Downloads\AA2\Delivery2_UnityProj\MyOctopusLibrary\OctopusController\OctopusController\obj\Release\OctopusController.pdb
