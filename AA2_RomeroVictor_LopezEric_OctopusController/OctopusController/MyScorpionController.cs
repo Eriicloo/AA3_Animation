@@ -24,6 +24,8 @@ namespace OctopusController
         float learningRate;
         float[] solutionsTail;
 
+        float magnusEffectDirection;
+        float shootingStrength;
 
         //LEGS
         Transform[] legTargets;
@@ -97,7 +99,10 @@ namespace OctopusController
 
         public void UpdateIK()
         {
- 
+            if (DistanceFromTarget(tailTarget.position, solutionsTail) < 1.0f)
+            {
+                updateTail();
+            }
         }
         #endregion
 
@@ -112,7 +117,10 @@ namespace OctopusController
         //TODO: implement Gradient Descent method to move tail if necessary
         private void updateTail()
         {
-
+            if (DistanceFromTarget(tailTarget.position, solutionsTail) > stopThreshold) 
+            {
+                TargetApproach(new Vector3((magnusEffectDirection * -0.5f), 0f, 0f) + tailTarget.position);
+            }
         }
         //TODO: implement fabrik method to move legs 
         private void updateLegs()
@@ -139,6 +147,40 @@ namespace OctopusController
         {
             Vector3 point = ForwardKinematics(solutions);
             return Vector3.Distance(point, target);
+        }
+
+        private float GradientCalculation(Vector3 target, float[] solutions, int i, float delta) 
+        {
+            solutions[i] += delta;
+            float distance1 = DistanceFromTarget(target, solutions);
+            solutions[i] -= delta;
+
+            float distance2 = DistanceFromTarget(target, solutions);
+
+            return (distance1 - distance2) / delta;
+        }
+
+        private float NewError(int i) 
+        {
+            return Vector3.Dot(new Vector3(0.0f, -1.0f, 0.0f),
+                _tail.Bones[_tail.Bones.Length - 1].forward - _tail.Bones[_tail.Bones.Length - 2].forward);
+        }
+
+        private void TargetApproach(Vector3 target) 
+        {
+            for (int i = 0; i < solutionsTail.Length; i++)
+            {
+                float gradient = GradientCalculation(target, solutionsTail, i, learningRate);
+
+                solutionsTail[i] -= 100.0f * shootingStrength * gradient + NewError(i) / 20.0f;
+
+                _tail.Bones[i].localRotation = Quaternion.Euler(solutionsTail[i] * axis[i]);
+
+                if (DistanceFromTarget(target, solutionsTail) < 0.25f)
+                {
+                    return;
+                }
+            }
         }
 
 
