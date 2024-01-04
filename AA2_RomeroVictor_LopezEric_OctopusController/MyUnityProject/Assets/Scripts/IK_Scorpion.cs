@@ -38,6 +38,8 @@ public class IK_Scorpion : MonoBehaviour
     bool _isPressingStrength;
     bool _isStrengthAugmenting;
 
+    bool hasMoved = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,7 +80,7 @@ public class IK_Scorpion : MonoBehaviour
         {
             if (_isStrengthAugmenting)
             {
-                strengthSlider.GetComponent<UnityEngine.UI.Slider>().value += Time.deltaTime;
+                strengthSlider.GetComponent<UnityEngine.UI.Slider>().value += Time.deltaTime * 1f;
                 if (strengthSlider.GetComponent<UnityEngine.UI.Slider>().value >= strengthSlider.GetComponent<UnityEngine.UI.Slider>().maxValue)
                 {
                     _isStrengthAugmenting = false;
@@ -86,7 +88,7 @@ public class IK_Scorpion : MonoBehaviour
             }
             else
             {
-                strengthSlider.GetComponent<UnityEngine.UI.Slider>().value -= Time.deltaTime;
+                strengthSlider.GetComponent<UnityEngine.UI.Slider>().value -= Time.deltaTime * 1f;
                 if (strengthSlider.GetComponent<UnityEngine.UI.Slider>().value <= strengthSlider.GetComponent<UnityEngine.UI.Slider>().minValue)
                 {
                     _isStrengthAugmenting = true;
@@ -104,6 +106,8 @@ public class IK_Scorpion : MonoBehaviour
             NotifyStartWalk();
             animTime = 0;
             animPlaying = true;
+
+            hasMoved = true;
         }
 
         if (animTime < animDuration)
@@ -116,10 +120,14 @@ public class IK_Scorpion : MonoBehaviour
             animPlaying = false;
         }
 
-        //NotifyStartWalk();
-        //animTime = 0;
-        //animPlaying = true;
+        if (hasMoved)
+        {
+            UpdateBodyPosition();
+            UpdateFutureLegBases();
+            UpdateBodyRotation();
 
+            hasMoved = false;
+        }
 
         _myController.UpdateIK();
     }

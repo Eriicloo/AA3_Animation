@@ -16,7 +16,7 @@ public class MovingTarget: MonoBehaviour
     MovingMode _mode;
 
     //movement speed in units per second
-    [Range(-1.0f,1.0f)]
+    [Range(-1.0f,10.0f)]
     [SerializeField]
     private float _movementSpeed = 5f;
 
