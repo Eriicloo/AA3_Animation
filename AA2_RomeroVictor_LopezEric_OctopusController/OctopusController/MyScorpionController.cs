@@ -12,10 +12,8 @@ namespace OctopusController
     {
         //TAIL
         Transform tailTarget;
-        Transform tailEndEffector;
         MyTentacleController _tail;
-        float animationRange;
-        //TAIL
+        
 
         Vector3[] axis;
         Vector3[] startingOffsets;
@@ -23,6 +21,7 @@ namespace OctopusController
         float stopThreshold;
         float learningRate;
         float[] solutionsTail;
+        //TAIL
 
         float magnusEffectDirection;
         float shootingStrength;
