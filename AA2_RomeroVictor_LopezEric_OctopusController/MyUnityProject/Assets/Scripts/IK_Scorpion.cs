@@ -38,8 +38,6 @@ public class IK_Scorpion : MonoBehaviour
     bool _isPressingStrength;
     bool _isStrengthAugmenting;
 
-    bool hasMoved = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -106,13 +104,13 @@ public class IK_Scorpion : MonoBehaviour
             NotifyStartWalk();
             animTime = 0;
             animPlaying = true;
-
-            hasMoved = true;
         }
 
         if (animTime < animDuration)
         {
             Body.position = Vector3.Lerp(StartPos.position, EndPos.position, animTime / animDuration);
+
+            UpdateAllValues();
         }
         else if (animTime >= animDuration && animPlaying)
         {
@@ -120,14 +118,7 @@ public class IK_Scorpion : MonoBehaviour
             animPlaying = false;
         }
 
-        if (hasMoved)
-        {
-            UpdateBodyPosition();
-            UpdateFutureLegBases();
-            UpdateBodyRotation();
-
-            hasMoved = false;
-        }
+        UpdateAllValues();
 
         _myController.UpdateIK();
     }
@@ -195,6 +186,13 @@ public class IK_Scorpion : MonoBehaviour
         Vector3 resultingNormal = (normalVector1 + normalVector2) / 2.0f;
 
         Body.transform.up = resultingNormal;
+    }
+
+    private void UpdateAllValues()
+    {
+        UpdateBodyPosition();
+        UpdateFutureLegBases();
+        UpdateBodyRotation();
     }
 
     private void OnDrawGizmos()
